@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/actionMainFragment">
+
+    <fragment
+        android:id="@+id/actionMainFragment"
+        android:name="ic.ac.ubaya.informatika.uts_160418019.view.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/actionToLoginFragment"
+            app:destination="@id/actionLoginFragment" />
+        <action
+            android:id="@+id/actionToRegisterFragment"
+            app:destination="@id/actionRegisterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/actionLoginFragment"
+        android:name="ic.ac.ubaya.informatika.uts_160418019.view.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/actionLoginToVaccineListFragment"
+            app:destination="@id/actionVaccineListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/actionRegisterFragment"
+        android:name="ic.ac.ubaya.informatika.uts_160418019.view.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/actionToVaccineListFragment"
+            app:destination="@id/actionVaccineListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/actionAboutApplicationFragment"
+        android:name="ic.ac.ubaya.informatika.uts_160418019.view.AboutApplicationFragment"
+        android:label="fragment_about_application"
+        tools:layout="@layout/fragment_about_application" />
+    <fragment
+        android:id="@+id/actionVaccineListFragment"
+        android:name="ic.ac.ubaya.informatika.uts_160418019.view.VaccineListFragment"
+        android:label="fragment_vaccine_list"
+        tools:layout="@layout/fragment_vaccine_list" >
+        <action
+            android:id="@+id/actionToVaccineDetailFragment"
+            app:destination="@id/actionVaccineDetailFragment" />
+        <action
+            android:id="@+id/actionToVaccineRegisterFragment"
+            app:destination="@id/actionVaccinateRegisterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/actionAboutCovidFragment"
+        android:name="ic.ac.ubaya.informatika.uts_160418019.view.AboutCovidFragment"
+        android:label="fragment_about_covid"
+        tools:layout="@layout/fragment_about_covid" />
+    <fragment
+        android:id="@+id/actionVaccineDetailFragment"
+        android:name="ic.ac.ubaya.informatika.uts_160418019.view.VaccineDetailFragment"
+        android:label="fragment_vaccine_detail"
+        tools:layout="@layout/fragment_vaccine_detail" >
+        <argument
+            android:name="vaccine_name"
+            app:argType="string" />
+        <argument
+            android:name="details"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/actionVaccinateRegisterFragment"
+        android:name="ic.ac.ubaya.informatika.uts_160418019.view.VaccinateRegisterFragment"
+        android:label="fragment_vaccinate_register"
+        tools:layout="@layout/fragment_vaccinate_register" >
+        <argument
+            android:name="vaccine_name"
+            app:argType="string" />
+        <action
+            android:id="@+id/actionVaccineRegisToVaccineList"
+            app:destination="@id/actionVaccineListFragment" />
+    </fragment>
+</navigation>
