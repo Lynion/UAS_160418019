@@ -63,11 +63,8 @@
         android:label="fragment_vaccine_detail"
         tools:layout="@layout/fragment_vaccine_detail" >
         <argument
-            android:name="vaccine_name"
-            app:argType="string" />
-        <argument
-            android:name="details"
-            app:argType="string" />
+            android:name="vaccine_id"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/actionVaccinateRegisterFragment"
@@ -75,8 +72,8 @@
         android:label="fragment_vaccinate_register"
         tools:layout="@layout/fragment_vaccinate_register" >
         <argument
-            android:name="vaccine_name"
-            app:argType="string" />
+            android:name="vaccine_id"
+            app:argType="integer" />
         <action
             android:id="@+id/actionVaccineRegisToVaccineList"
             app:destination="@id/actionVaccineListFragment" />

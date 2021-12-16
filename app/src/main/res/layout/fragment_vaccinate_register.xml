@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="user"
+            type="ic.ac.ubaya.informatika.uts_160418019.model.Users" />
+        <variable
+            name="vaccine"
+            type="ic.ac.ubaya.informatika.uts_160418019.model.Vaccine" />
+        <variable
+            name="finalRegisListener"
+            type="ic.ac.ubaya.informatika.uts_160418019.view.FinalRegisClick" />
+    </data>
+<FrameLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.VaccinateRegisterFragment">
@@ -15,8 +27,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
-            android:layout_marginTop="160dp"
+            android:layout_marginTop="24dp"
             android:text="Vaccine Name:"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/unameTxt" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="96dp"
+            android:text="Username:"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -26,7 +49,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:text="Vaccine Name:"
+            android:text="@{vaccine.name}"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -50,6 +73,7 @@
             android:layout_marginTop="48dp"
             android:layout_marginEnd="36dp"
             android:text="Register"
+            android:onClick="@{finalRegisListener.onFinalRegisClick}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/dateTxt" />
 
@@ -59,10 +83,23 @@
             android:layout_height="48dp"
             android:layout_marginTop="8dp"
             android:ems="10"
+            android:hint="ddMMyyyy"
             android:inputType="date"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.452"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+        <TextView
+            android:id="@+id/unameTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@{user.username}"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
-</FrameLayout>
+</FrameLayout></layout>
